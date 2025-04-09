@@ -111,14 +111,14 @@ bottom_widgets = [
     widget.WindowName(
         **base(fg='focus'),
         font='UbuntuMono Bold Italic',
-        fontsize=14,
+        fontsize=16,
         padding=5
     ),
 ]
 
 widget_defaults = {
     'font': 'UbuntuMono Nerd Font Mono Bold Italic',
-    'fontsize': 14,
+    'fontsize': 16,
     'padding': 1,
 }
 extension_defaults = widget_defaults.copy()
