@@ -1,0 +1,86 @@
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/DanielBenjaminPerezMoralesDev13
+# GitLab: https://gitlab.com/DanielBenjaminPerezMoralesDev13
+# Correo electrónico: danielperezdev@proton.me
+
+# https://www.nano-editor.org/dist/latest/nanorc.5.html
+
+# Configuración de la posición del cursor
+set positionlog         # Recuerda la posición del cursor al cerrar y reabrir archivos
+
+# Opciones de tabulación y espacios
+set tabsize 4           # Define el tamaño de tabulación en 4 espacios
+set tabstospaces        # Convierte tabulaciones en espacios
+
+# Opciones de indentación
+set autoindent          # Habilita la indentación automática
+
+# Opciones de desplazamiento y envoltura de texto
+set softwrap            # Ajusta el texto a la ventana sin cortar palabras
+set atblanks            # Permite el ajuste de línea en espacios en blanco
+
+# Visualización
+set linenumbers         # Muestra números de línea
+set constantshow        # Muestra siempre la línea y columna actuales
+
+# Configuración de colores para el número de línea
+# set numbercolor bold,italic,#FFF,#000  # Números de línea en blanco con fondo negro
+
+# Configuración de colores para la barra de solicitud
+# set promptcolor bold,italic,#000,#FFF  # Barra de solicitud en negro con fondo blanco
+
+# Configuración de colores para la mini barra
+# set minicolor bold,italic,#FFF,#000  # Mini barra en blanco con fondo negro
+
+# Configuración de colores para la barra de título
+# set titlecolor bold,italic,#000,#FFF  # Título en negro con fondo blanco
+
+# Configuración de colores para la barra de solicitud
+# set promptcolor bold,italic,#FFF,#000  # Barra de solicitud en blanco con fondo negro
+
+set indicator           # Barra de desplazamiento a la derecha para mostrar la posición
+set minibar             # Muestra información en la barra inferior y elimina la barra superior
+
+# Uso del ratón
+set mouse               # Habilita el soporte para el ratón (si el terminal lo soporta)
+
+# Opciones de búsqueda
+set casesensitive       # Realiza búsquedas distinguiendo entre mayúsculas y minúsculas
+set historylog          # Guarda el historial de búsqueda y reemplazo
+
+# Otras configuraciones útiles
+set nowrap              # Evita que las líneas se envuelvan automáticamente
+set multibuffer         # Permite abrir múltiples archivos en diferentes buffers
+set quickblank          # Limpia los mensajes de ayuda de la parte inferior rápidamente
+set zap                 # Permite eliminar texto resaltado con CTRL+SHIFT+Backspace
+
+# Configuraciones adicionales recomendadas
+bind ^Z suspend main    # Permite suspender Nano con Ctrl+Z
+set wordbounds          # Navega entre palabras usando Ctrl+flechas
+set punct               # Navega entre palabras y puntuación como unidades separadas
+
+# Ajustes de respaldo
+set backup                              # Crea copias de respaldo del archivo actual
+set backupdir "~/.cache/nano/backups/"  # Ubicación de los respaldos
+# mkdir -p ~/.cache/nano/backups/
+
+# Limitar el directorio de operación
+set operatingdir "/tmp/nano/"           # Limita a Nano a editar archivos solo en este directorio
+# mkdir -p /tmp/nano
+
+# Soporte de corrección ortográfica
+set speller "aspell -x -c"              # Utiliza aspell para la corrección ortográfica
+
+# Activar resaltado de sintaxis
+include "/usr/share/nano/*.nanorc"      # Habilita el resaltado de sintaxis
+
+# Asignación de teclas de acceso rápido
+bind ^C copy main                       # Ctrl+C - Copiar
+bind ^V paste all                       # Ctrl+V - Pegar
+bind ^F whereis all                     # Ctrl+F - Buscar
+bind ^S savefile main                   # Ctrl+S - Guardar
+
+# Acción de corte
+# bind ^K cut main
+bind M-K cut main
+
