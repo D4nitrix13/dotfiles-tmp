@@ -23,7 +23,7 @@ workspaces = lambda: [
     widget.GroupBox(
         **base(fg='light'),
         font='UbuntuMono Nerd Font',
-        fontsize=22,
+        fontsize=24,
         margin_y=3,
         margin_x=0,
         padding_y=8,
@@ -49,13 +49,13 @@ top_widgets = [
     widget.Spacer(),
     widget.Systray(
         background=colors['dark'],
-        padding=5
+        padding=7
     ),
     widget.Sep(**separator),
     widget.Image(filename=img['bar4']),
     widget.TextBox(
         **base(bg='color4'),
-        **text_box(22),
+        **text_box(fontsize=24),
         text=''  # Icon: nf-fa-download
     ),
    widget.CheckUpdates(
@@ -72,7 +72,7 @@ top_widgets = [
     ),
     widget.TextBox(
         **base(bg='color3'),
-        **text_box(22),
+        **text_box(fontsize=24),
         text=''  # Icon: nf-fa-feed
     ),
     widget.Net(
@@ -96,7 +96,7 @@ top_widgets = [
     ),
     widget.TextBox(
         **base(bg='color1'),
-        **text_box(fontsize=27),
+        **text_box(fontsize=24),
         text='󰃰'  # Icon: nf-md-calendar_clock
     ),
     widget.Clock(
