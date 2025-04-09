@@ -1,0 +1,7 @@
+lib
+corepack
+node-gyp
+nopt
+npm
+semver
+serve
