@@ -1,6 +1,5 @@
 -- Autor: Daniel Benjamin Perez Morales
 -- GitHub: https://github.com/D4nitrix13
--- Gitlab: https://gitlab.com/D4nitrix13
 -- Correo electrónico: danielperezdev@proton.me
 
 -- Pull in the wezterm API
@@ -28,14 +27,54 @@ config.window_padding = {
 }
 
 config.force_reverse_video_cursor = true
-
-config.colors = require("colorscheme")
-config.font = require("fonts")
-config.font_rules = require("font_rules")
+config.colors = {}
+config.colors.foreground = "#dcd7ba"
+config.colors.background = "#181616"
+config.colors.cursor_bg = "#c8c093"
+config.colors.cursor_fg = "#c8c093"
+config.colors.cursor_border = "#c8c093"
+config.colors.selection_fg = "#c8c093"
+config.colors.selection_bg = "#2d4f67"
+config.colors.scrollbar_thumb = "#16161d"
+config.colors.split = "#16161d"
+config.colors.ansi = { "#090618", "#c34043", "#76946a", "#c0a36e", "#7e9cd8", "#957fb8", "#6a9589", "#c8c093" }
+config.colors.brights = { "#727169", "#e82424", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#dcd7ba" }
+config.colors.indexed = { [16] = "#ffa066", [17] = "#ff5d62" }
 
 -- https://wezfurlong.org/wezterm/config/fonts.html
 config.window_background_opacity = 0.85
 
+config.font = wezterm.font_with_fallback {
+	-- Main fountain with ligatures
+	'Agave Nerd Font Mono',
+	'JetBrainsMono Nerd Font Mono',
+	'Hack Nerd Font Mono',
+	'Mononoki Nerd Font Mono',
+}
+
+config.font_rules = {
+
+	{
+		intensity = 'Bold',
+		italic = false,
+		font = wezterm.font_with_fallback {
+			family = 'Agave Nerd Font Mono',
+			weight = 'Bold',
+			italic = true,
+		},
+	},
+
+	{
+		intensity = 'Normal',
+		italic = false,
+		font = wezterm.font_with_fallback {
+			family = 'JetBrainsMono Nerd Font Mono',
+			weight = 'Bold',
+			italic = true,
+		},
+	},
+
+}
 -- https://wezfurlong.org/wezterm/config/lua/config/font_size.html
 config.font_size = 20.0
 
@@ -48,13 +87,11 @@ config.default_cursor_style = 'BlinkingBar'
 
 -- https://wezfurlong.org/wezterm/config/lua/config/cursor_thickness.html
 config.cursor_thickness = "0.1cell"
-
 -- https://wezfurlong.org/wezterm/config/lua/config/underline_thickness.html
 config.underline_thickness = "0.1cell"
 
 -- https://wezfurlong.org/wezterm/config/lua/config/animation_fps.html
-config.animation_fps = 60
-config.cursor_blink_rate = 100
+config.animation_fps = 1
 config.cursor_blink_ease_in = 'Constant'
 config.cursor_blink_ease_out = 'Constant'
 
