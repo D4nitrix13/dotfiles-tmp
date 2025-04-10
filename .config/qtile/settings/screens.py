@@ -1,17 +1,47 @@
+"""
+Qtile screen and status bar configuration.
+
+This module defines the layout and behavior of the top and bottom status bars 
+for each screen in the Qtile window manager. It uses themed colors, icons, and 
+widget configurations to create a visually consistent and informative UI.
+
+Functions:
+    status_bar(w): Creates a Bar instance with a specified list of widgets.
+
+Globals:
+    screens (List[Screen]): A list of screen definitions with top and bottom bars.
+"""
+
+
+from typing import List
+
+from libqtile.bar import Bar
 from libqtile.config import Screen
-from libqtile import bar
-from settings.widgets import top_widgets, bottom_widgets
+
 from settings.theme import colors
-import subprocess
+from settings.widgets import bottom_widgets, top_widgets
+
+# import subprocess
 
 
-status_bar = lambda widgets: bar.Bar(widgets, 24, opacity=0.85, background=colors["dark"])
+def status_bar(w) -> Bar:
+    """
+    Creates a Qtile Bar with the given widgets and default styling.
 
-screens = [
-    Screen(
-        top=status_bar(top_widgets),
-        bottom=status_bar(bottom_widgets)
-    ),
+    Args:
+        w (list): A list of Qtile widgets to include in the bar.
+
+    Returns:
+        Bar: A configured Bar instance with specified widgets, background color,
+             size, and opacity.
+    """
+    return Bar(
+        widgets=w, size=24, opacity=0.85, background=colors.get("dark") or "#0f101a"
+    )
+
+
+screens: List[Screen] = [
+    Screen(top=status_bar(w=top_widgets), bottom=status_bar(w=bottom_widgets)),
 ]
 
 # connected_monitors = subprocess.run(
