@@ -1,13 +1,17 @@
-# Imports Qtile
-from libqtile.config import Key
-from libqtile.lazy import lazy
+from typing import Any, List, Tuple
 
-# Imports General
+from libqtile.config import Key  # type: ignore
+from libqtile.lazy import lazy  # type: ignore
 
 mod: str = "mod4"
+key: Tuple[List[str], "str", Any]
 
-keys = [
-    Key(key[0], key[1], *key[2:])
+keys: List[Key] = [
+    Key(
+        key[0],  # Modifiers
+        key[1],  # Key
+        *key[2 : len(key) : 1],  # Commands
+    )
     for key in [
         # ------------ Window Configs ------------
         # Switch between windows in current stack pane
@@ -51,6 +55,7 @@ keys = [
         # ([mod, "shift"], "r", lazy.spawn("redshift -x")),
         # Screenshot
         ([mod], "s", lazy.spawn("scrot")),
+        ([mod, "shift"], "s", lazy.spawn("scrot -s")),
         # ------------ Hardware Configs ------------
         # Volume
         (
