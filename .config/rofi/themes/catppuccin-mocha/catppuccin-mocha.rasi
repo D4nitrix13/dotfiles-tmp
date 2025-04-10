@@ -1,0 +1,112 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Catppuccin Mocha theme
+ * User: Contributors
+ * Copyright: *!
+ */
+
+configuration {
+  font: "Cascadia Code NF Bold Italic 12";
+
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: #1e1e2e;  /* base color */
+  fg: #cdd6f4;  /* text color */
+  blue: #89b4fa;  /* blue */
+  blue-alt: #89b4fa15;  /* faded blue */
+  red: #f38ba8;  /* red */
+  red-alt: #f38ba815;  /* faded red */
+  green: #a6e3a1;  /* green */
+  yellow: #f9e2af;  /* yellow */
+  purple: #cba6f7;  /* purple */
+  cyan: #94e2d5;  /* cyan */
+  pink: #f5c2e7;  /* pink */
+  orange: #fab387;  /* orange */
+  gold: #ffd47e;  /* gold */
+  
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  border: 2px;
+  border-color: @blue-alt;
+  border-radius: 6px;
+  padding: 6px;
+  transparency: "real";  /* transparencia real */
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  border: 0 0 0 2px;
+  border-color: @blue;
+  border-radius: 6px;
+  children: [entry];
+  margin: 0 0 6px 0;
+}
+
+entry {
+  background-color: @blue-alt;
+  padding: 10px;
+  text-color: @blue;
+}
+
+listview {
+  lines: 10;
+}
+
+element {
+  border: 0 0 0 2px;
+  children: [element-icon, element-text];
+}
+
+element-icon {
+  padding: 10px 10px;
+  background-color: transparent;  
+}
+
+element-icon selected {
+  background-color: @red-alt;
+  text-color: @red;
+}
+
+element selected {
+  border-color: @red;
+  border-radius: 6px;
+}
+
+element-text {
+  padding: 10px;
+}
+
+element-text selected {
+  background-color: @red-alt;
+  text-color: @red;
+}
+
