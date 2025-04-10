@@ -4,7 +4,6 @@
 # Antonio Sarosi
 # https://www.youtube.com/c/antoniosarosi
 
-
 from libqtile import hook
 
 from settings.keys import mod, keys

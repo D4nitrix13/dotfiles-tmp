@@ -1,3 +1,25 @@
+"""
+Qtile bar widgets configuration using a themed layout.
+
+This module defines utility functions and widget groups for constructing
+customized top and bottom bars in a Qtile-based window manager setup.
+
+Functions:
+    - base(): Returns a dictionary of foreground and background colors.
+    - text_box(): Returns default styling for TextBox widgets.
+    - workspaces(): Returns a configured GroupBox for workspace indicators.
+
+Widget groups:
+    - top_widgets: Comprehensive list of widgets for the top bar including
+      workspace indicators, system monitors, and a systray.
+    - bottom_widgets: Slim status bar with focused window name, system info, and clock.
+
+Constants:
+    - separator: Thin spacer widget used between sections.
+    - widget_defaults: Default font and padding settings for widgets.
+    - extension_defaults: Copied defaults for use with Qtile extensions.
+"""
+
 from subprocess import check_output
 from typing import Dict, List, Union
 
@@ -7,6 +29,17 @@ from settings.theme import colors, img
 
 
 def base(fg: str = "text", bg: str = "dark") -> Dict[str, str]:
+    """
+    Returns a dictionary with foreground and background colors based on the
+    keys defined in the `colors` dictionary.
+
+    Args:
+        fg (str): Key for the foreground color.
+        bg (str): Key for the background color.
+
+    Returns:
+        Dict[str, str]: Dictionary with "foreground" and "background" keys.
+    """
     return {
         "foreground": colors.get(fg) or "#0f101a",
         "background": colors.get(bg) or "#0f101a",
@@ -14,6 +47,14 @@ def base(fg: str = "text", bg: str = "dark") -> Dict[str, str]:
 
 
 def text_box(fontsize=20) -> Dict[str, Union[str, int]]:
+    """
+    Returns default parameters for a TextBox widget.
+
+    Args:
+        fontsize (int): Font size of the text.
+
+    Returns:
+    """
     return {
         "font": "UbuntuMono Bold Italic",
         "fontsize": fontsize,
@@ -22,6 +63,12 @@ def text_box(fontsize=20) -> Dict[str, Union[str, int]]:
 
 
 def workspaces() -> List[widget.GroupBox]:
+    """
+    Creates a list with a single customized GroupBox widget for displaying workspaces.
+
+    Returns:
+        List[widget.GroupBox]: List containing one configured GroupBox instance.
+    """
     return [
         widget.GroupBox(
             **base(fg="light"),
