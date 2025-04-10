@@ -48,6 +48,7 @@ def autostart() -> None:
     Runs the autostart.sh script once after Qtile starts.
     """
     call(args=[path.join(qtile_path, "autostart.sh")])
+    return None
 
 
 main: None = None
