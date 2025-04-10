@@ -1,48 +1,75 @@
-# Imports Qtile
-# Imports General
-import subprocess
+from subprocess import check_output
+from typing import Dict, List, Union
 
 from libqtile import qtile, widget
+
 from settings.theme import colors, img
 
-base = lambda fg="text", bg="dark": {"foreground": colors[fg], "background": colors[bg]}
 
-separator = {
+def base(fg: str = "text", bg: str = "dark") -> Dict[str, str]:
+    return {
+        "foreground": colors.get(fg) or "#0f101a",
+        "background": colors.get(bg) or "#0f101a",
+    }
+
+
+def text_box(fontsize=20) -> Dict[str, Union[str, int]]:
+    return {
+        "font": "UbuntuMono Bold Italic",
+        "fontsize": fontsize,
+        "padding": 5,
+    }
+
+
+def workspaces() -> List[widget.GroupBox]:
+    return [
+        widget.GroupBox(
+            **base(fg="light"),
+            font="UbuntuMono Nerd Font",
+            fontsize=22,
+            margin_y=3,
+            margin_x=0,
+            padding_y=8,
+            padding_x=5,
+            borderwidth=1,
+            active=colors["light"],
+            inactive=colors["light"],
+            rounded=False,
+            highlight_method="block",
+            this_current_screen_border=colors["focus"],
+            this_screen_border=colors["grey"],
+            other_current_screen_border=colors["dark"],
+            other_screen_border=colors["dark"],
+        )
+    ]
+
+
+separator: Dict[str, Union[str, int]] = {
     **base(),
     "linewidth": 0,
     "padding": 5,
 }
-
-text_box = lambda fontsize=20: {
-    "font": "UbuntuMono Bold Italic",
-    "fontsize": fontsize,
-    "padding": 5,
-}
-
-workspaces = lambda: [
-    widget.GroupBox(
-        **base(fg="light"),
-        font="UbuntuMono Nerd Font",
-        fontsize=22,
-        margin_y=3,
-        margin_x=0,
-        padding_y=8,
-        padding_x=5,
-        borderwidth=1,
-        active=colors["light"],
-        inactive=colors["light"],
-        rounded=False,
-        highlight_method="block",
-        this_current_screen_border=colors["focus"],
-        this_screen_border=colors["grey"],
-        other_current_screen_border=colors["dark"],
-        other_screen_border=colors["dark"],
-    )
-]
-
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
-top_widgets = [
+top_widgets: List[
+    Union[
+        List[widget.GroupBox],
+        widget.Spacer,
+        widget.Image,
+        widget.TextBox,
+        widget.CheckUpdates,
+        widget.PulseVolume,
+        widget.KeyboardLayout,
+        widget.DF,
+        widget.Memory,
+        widget.CPU,
+        widget.Net,
+        widget.CurrentLayoutIcon,
+        widget.CurrentLayout,
+        widget.Systray,
+        widget.Sep,
+    ],
+] = [
     *workspaces(),
     widget.Spacer(),
     widget.Image(filename=img["bar11"]),
@@ -134,7 +161,17 @@ top_widgets = [
 ]
 
 
-bottom_widgets = [
+bottom_widgets: List[
+    Union[
+        widget.Sep,
+        widget.WindowName,
+        widget.Spacer,
+        widget.Image,
+        widget.GenPollText,
+        widget.TextBox,
+        widget.Clock,
+    ]
+] = [
     widget.Sep(**separator),
     widget.WindowName(
         **base(fg="focus"), font="UbuntuMono Bold Italic", fontsize=14, padding=5
@@ -143,8 +180,8 @@ bottom_widgets = [
     widget.Image(filename=img["bar2"]),
     widget.GenPollText(
         **base(bg="color2"),
-        func=lambda: subprocess.check_output(
-            'printf "Arch Linux $(uname -r) "', shell=True, text=True
+        func=lambda: check_output(
+            args='printf "Arch Linux $(uname -r) "', shell=True, text=True
         ),
         fontsize=14,
         padding=5,
@@ -159,9 +196,10 @@ bottom_widgets = [
     widget.Clock(**base(bg="color1"), format="%A, %d of %B %Y - %I:%M:%S %p "),
 ]
 
-widget_defaults = {
+widget_defaults: Dict[str, Union[str, int]] = {
     "font": "UbuntuMono Bold Italic",
     "fontsize": 14,
     "padding": 1,
 }
-extension_defaults = widget_defaults.copy()
+
+extension_defaults: Dict[str, Union[str, int]] = widget_defaults.copy()
