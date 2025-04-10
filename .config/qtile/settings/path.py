@@ -11,6 +11,11 @@ Variables:
 This script can be used to reference Qtile configuration files for further automation or customizations.
 """
 
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
 from os import path
 
 home: str = path.expanduser(path="~")

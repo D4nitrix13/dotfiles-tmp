@@ -18,6 +18,11 @@ Icons used (with Nerd Font codes):
 - 󰌨 : Layers or misc (nf-md-layers)
 """
 
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
 from typing import List
 
 from libqtile.config import Group, Key

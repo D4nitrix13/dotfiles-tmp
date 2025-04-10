@@ -12,12 +12,12 @@ Requires:
 - config.json in qtile_path: must include a 'theme' key.
 - themes/[theme_name]/colors.json
 - themes/[theme_name]/img/ (directory of image files)
-
-Autor: Daniel Benjamin Perez Morales
-GitHub: https://github.com/D4nitrix13
-Gitlab: https://gitlab.com/D4nitrix13
-Correo electrónico: danielperezdev@proton.me
 """
+
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
 
 from io import TextIOWrapper
 from os import listdir, path

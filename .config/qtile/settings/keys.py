@@ -20,8 +20,12 @@ Parameters:
 - keys (List[Key]): A list of Key objects that define all the keybindings.
 
 This configuration is intended to be used with the Qtile window manager to manage windows, applications, and system hardware.
-
 """
+
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
 
 from libqtile.config import Key  # type: ignore
 from libqtile.lazy import lazy  # type: ignore

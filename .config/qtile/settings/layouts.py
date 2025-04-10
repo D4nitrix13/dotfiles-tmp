@@ -27,6 +27,11 @@ Note:
     `colors.get("color4")` is not `None`.
 """
 
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
 # Imports Qtile
 from typing import Dict, List, Optional, Union
 

@@ -12,6 +12,10 @@ Globals:
     screens (List[Screen]): A list of screen definitions with top and bottom bars.
 """
 
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
 
 from typing import List
 

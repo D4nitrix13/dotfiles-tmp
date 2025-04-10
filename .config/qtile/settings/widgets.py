@@ -20,6 +20,11 @@ Constants:
     - extension_defaults: Copied defaults for use with Qtile extensions.
 """
 
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
 from subprocess import check_output
 from typing import Dict, List, Union
 

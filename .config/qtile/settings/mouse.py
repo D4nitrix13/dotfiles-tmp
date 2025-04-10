@@ -14,6 +14,11 @@ Variables:
 This script allows for customized mouse interactions with windows in Qtile for better workflow control.
 """
 
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
 from typing import List, Union
 from libqtile.config import Click, Drag
 from libqtile.lazy import lazy
