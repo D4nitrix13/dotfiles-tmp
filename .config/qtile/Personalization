@@ -1,0 +1,109 @@
+<!-- Autor: Daniel Benjamin Perez Morales -->
+<!-- GitHub: https://github.com/D4nitrix13 -->
+<!-- Gitlab: https://gitlab.com/D4nitrix13 -->
+<!-- Correo electrónico: danielperezdev@proton.me -->
+
+errores
+https://github.com/qtile/qtile/issues/1555
+
+
+pacman -Qq > pacman/installed.txt
+yay -Qq > yay/installed.txt
+pipx list --short | awk '{print $1}' > pipx/installed.txt
+cargo install --list | cut -d' ' -f1 | xargs | tr ' ' '\n' > cargo/installed.txt
+npm list -g --depth=0 --parseable | rev | cut -d'/' -f1 | rev > npm/installed.txt
+
+---
+luarocks list --porcelain
+
+composer global show --name-only
+
+
+Chatgpt estos son mis apuntes estoy haciendo la documentacion de como personalizar un sistema operativo en linux estoy usando arch linux soy nuevo y no manejo tantos conceptos no se que significa cada comando que significa el subcomando cada opcion cada valor de opciones que requieren poner valores explica todo muy detallado
+
+<https://bbs.archlinux.org/viewtopic.php?id=284682>
+<https://bbs.archlinux.org/viewtopic.php?id=187798>
+<https://github.com/jimeh/tmux-themepack>
+
+<!-- listar file ocultos -->
+ls -pA | grep -v /
+<!-- listar dir ocultos -->
+ls -d .*/
+
+---
+
+para termianl sin server grafico
+
+ctrl + alt + f2
+
+ctrl + alt + ......f6
+
+para voloer
+
+ctrl + alt + f7
+
+---
+
+si conectamos un disco que tenga varios sistema operativo instalado basta con montar la particion efi para que reconozca windwos si esta instalado y para que reconozca linux
+
+change font grub
+<https://www.baeldung.com/linux/grub-menu-font-size>
+
+    grub-mkfont --output=/boot/grub/fonts/ubuntuMonoBoldItalic.pf2 /usr/share/fonts/TTF/UbuntuMonoNerdFontMono-BoldItalic.ttf
+
+    echo "GRUB_FONT=/boot/grub/fonts/ubuntuMonoBoldItalic.pf2" | sudo tee -a /etc/default/grub
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+    volume icon directory config
+
+    sudo pacman -Syu cronie --noconfirm
+
+    sudo systemctl enable cronie.service
+    export VISUAL="nvim"
+    export EDITOR="nvim"
+
+    sudo mkdir /root/Scripts -pv
+    mkdir /home/d4nitrix13/Scripts -pv
+
+optional no
+sudo pacman -Syu redshift --noconfirm
+sudo pacman -Syu --noconfirm lightdm-webkit2-greeter
+
+borrar
+sudo pacman -R redshift --noconfirm
+sudo pacman -R --noconfirm lightdm-webkit2-greeter
+
+---
+
+# jaja
+
+eres experto en arch linux me diras como funciona este paquete a bajo nivel
+pagina de instalacion de arch linux del paquete
+repositorio de github del paquete
+pagina oficial del paquete si tiene si no pon no disponible
+
+sudo pacman -S code -> no recomendada
+
+alt + z alternanar linea
+
+---
+
+min 0:0
+
+vlc /mnt/windows-d/Escritorio/Daniel\ Perez\ Morales/mastermind\ cursos/#2informatica/#2Introducción\ a\ Linux/#2Linux\ Creando\ tu\ propio\ entorno\ de\ escritorio\ en\ Arch/#1Gestores\ de\ ventanas/#11
+
+<!-- ## importante commit 393fa8f -->
+
+<!-- ## importante commit b4b16fa -->
+
+## importante commit 83fb32e
+
+fichero -> 30
+
+---
+
+<!-- todo -->
+
+ventana floante
+
+mod shift f
+
