@@ -24,39 +24,43 @@
         "#a151d3"
     ],
     "color2": [
-        "#c3e88d",
-        "#c3e88d"
-    ],
-    "color3": [
         "#F07178",
         "#F07178"
     ],
-    "color4": [
+    "color3": [
         "#fb9f7f",
         "#fb9f7f"
     ],
-    "color5": [
+    "color4": [
         "#56b6c2",
         "#56b6c2"
     ],
-    "color6": [
+    "color5": [
         "#98c379",
         "#98c379"
     ],
-    "color7": [
+    "color6": [
         "#f06292",
         "#f06292"
     ],
-    "color8": [
+    "color7": [
         "#61afef",
         "#61afef"
     ],
-    "color9": [
+    "color8": [
         "#d19a66",
         "#d19a66"
     ],
-    "color10": [
+    "color9": [
         "#ffd47e",
         "#ffd47e"
+    ],
+    "color10": [
+        "#c3e88d",
+        "#c3e88d"
+    ],
+    "color11": [
+        "#ffcb6b",
+        "#ffcb6b"
     ]
 }
