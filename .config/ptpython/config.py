@@ -5,7 +5,8 @@ from prompt_toolkit.styles import Style
 from ptpython.layout import CompletionVisualisation
 
 # Autor: Daniel Benjamin Perez Morales
-# GitHub: https://github.com/DanielPerezMoralesDev13
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
 # Correo electrónico: danielperezdev@proton.me
 
 # Historial De Comandos
