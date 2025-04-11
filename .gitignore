@@ -1,6 +1,10 @@
 # Files
 *.kdbx
 .*_history
+.xsession-errors
+.xsession-errors.old
+.osh-update
+.Xauthority
 
 # Directory
 Downloads/
@@ -26,4 +30,7 @@ pycrypy/
 .ssh/
 .tmux/
 .vscode/
+.dotnet/
+.rest-client/
 smashito/
+
