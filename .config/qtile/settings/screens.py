@@ -1,8 +1,8 @@
 """
 Qtile screen and status bar configuration.
 
-This module defines the layout and behavior of the top and bottom status bars 
-for each screen in the Qtile window manager. It uses themed colors, icons, and 
+This module defines the layout and behavior of the top and bottom status bars
+for each screen in the Qtile window manager. It uses themed colors, icons, and
 widget configurations to create a visually consistent and informative UI.
 
 Functions:
@@ -40,7 +40,7 @@ def status_bar(w) -> Bar:
              size, and opacity.
     """
     return Bar(
-        widgets=w, size=24, opacity=0.85, background=colors.get("dark") or "#0f101a"
+        widgets=w, size=24, opacity=0.95, background=colors.get("dark") or "#0f101a"
     )
 
 
