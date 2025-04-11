@@ -5,13 +5,7 @@
 # Gitlab: https://gitlab.com/D4nitrix13
 # Correo electrónico: danielperezdev@proton.me
 
-# systray battery icon
-if [ -d /sys/class/power_supply/BAT0 ]; then
-  cbatticon -u 5 &
-fi
-
 # Keyborad Latam
-setxkbmap latam
-
-# systray volume
-volumeicon &
+if [[ "$(setxkbmap -query | tail -n 1 | xargs | awk '{print $2}')" != "latam" ]]; then
+  setxkbmap latam
+fi

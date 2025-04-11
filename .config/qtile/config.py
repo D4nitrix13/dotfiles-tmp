@@ -51,6 +51,15 @@ def autostart() -> None:
     return None
 
 
+@hook.subscribe.startup
+def script_on_reboot() -> None:
+    """
+    Runs the autostart.sh script every time Qtile restarts.
+    """
+    call(args=[path.join(qtile_path, "restart.sh")])
+    return None
+
+
 main: None = None
 dgroups_key_binder: None = None
 dgroups_app_rules: List = []
