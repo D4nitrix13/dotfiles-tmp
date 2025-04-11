@@ -1,9 +1,9 @@
 {
     "qtile": {
         "wm": "material-ocean",
-        "alacritty": "material-ocean"
+        "alacritty": "onedark"
     },
     "spectrwm": {
-        "alacritty": "material-ocean"
+        "alacritty": "onedark"
     }
 }

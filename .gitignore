@@ -1,9 +1,13 @@
+# Files
 *.kdbx
-Downloads
-intelephense
-Documents
+.*_history
+
+# Directory
+Downloads/
+intelephense/
+Documents/
 Wallpapers/
-yay
+yay/
 .cache/
 .cargo/
 .gnupg/

@@ -9,3 +9,6 @@
 if [[ "$(setxkbmap -query | tail -n 1 | xargs | awk '{print $2}')" != "latam" ]]; then
   setxkbmap latam
 fi
+
+# Delete Files
+rm -f ~/.zcompdump-asus-5.9*
