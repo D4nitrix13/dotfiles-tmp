@@ -24,15 +24,39 @@
         "#ff5555"
     ],
     "color2": [
+        "#c0caf5",
+        "#c0caf5"
+    ],
+    "color3": [
         "#A77AC4",
         "#A77AC4"
     ],
-    "color3": [
+    "color4": [
         "#7197E7",
         "#7197E7"
     ],
-    "color4": [
+    "color5": [
         "#ffb86c",
         "#ffb86c"
+    ],
+    "color6": [
+        "#50fa7b",
+        "#50fa7b"
+    ],
+    "color7": [
+        "#8be9fd",
+        "#8be9fd"
+    ],
+    "color8": [
+        "#bd93f9",
+        "#bd93f9"
+    ],
+    "color9": [
+        "#f1fa8c",
+        "#f1fa8c"
+    ],
+    "color10": [
+        "#6272a4",
+        "#6272a4"
     ]
 }
