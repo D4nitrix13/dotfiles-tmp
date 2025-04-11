@@ -1,17 +1,20 @@
 #!/usr/bin/env python
 
-from sys import argv
-from os import path
-import subprocess
 import json
+import subprocess
+from io import TextIOWrapper
+from os import path
+from sys import argv
+from typing import Dict
 
 
-def main():
-    wm = argv[1]
-    home = path.expanduser("~")
+def main() -> None:
+    wm: str = argv[1]
+    home: str = path.expanduser("~")
+    f: TextIOWrapper
 
-    with open(path.join(home, ".theme", "theme.json")) as f:
-        theme = json.load(f)[wm]
+    with open(file=path.join(home, ".theme", "theme.json")) as f:
+        theme: Dict[str, str] = json.load(fp=f).get(wm)
 
     # subprocess.call(
     #     [path.join(home, ".config", "alacritty", "theme.py"), theme["alacritty"]]
@@ -21,13 +24,17 @@ def main():
         qtile_theme_file = path.join(
             path.expanduser("~"), ".config", "qtile", "config.json"
         )
-        with open(qtile_theme_file) as f:
-            qtile_config = json.load(f)
-        qtile_config["theme"] = theme["wm"]
-        with open(qtile_theme_file, "w") as f:
-            json.dump(qtile_config, f)
 
-    subprocess.call(["notify-send", "Theme Set!"])
+        with open(file=qtile_theme_file) as f:
+            qtile_config: Dict[str, str] = json.load(fp=f)
+
+        qtile_config["theme"] = theme.get("wm") or "material-ocean"
+
+        with open(file=qtile_theme_file, mode="w") as f:
+            json.dump(obj=qtile_config, fp=f)
+
+    subprocess.call(args=["notify-send", "-u", "normal", "Theme Set!"])
+    return None
 
 
 if __name__ == "__main__":
