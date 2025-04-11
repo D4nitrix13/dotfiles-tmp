@@ -1,0 +1,22 @@
+server:
+  host: localhost
+  port: 8080
+
+database:
+  user: root
+  password: password
+  host: localhost
+  port: 5432
+
+logging:
+  level: debug
+  path: /var/log/app.log
+
+settings:
+  enabled: true
+  timeout: 30
+  nested:
+    - value1
+    - value2
+  extra:
+    - value3

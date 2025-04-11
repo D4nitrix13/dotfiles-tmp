@@ -1,0 +1,20 @@
+primera configurar la ruta de Obsiadian Notes
+
+./lua/plugins/obsidian.lua
+
+luego
+
+borrar plugins de ia inutiles
+
+./Gentleman.Dots/GentlemanNvim/nvim/lua/plugins/copilot-chat.lua
+
+./Gentleman.Dots/GentlemanNvim/nvim/lua/plugins/copilot.lua
+
+./Gentleman.Dots/GentlemanNvim/nvim/lua/plugins/avante.lua
+
+
+luego
+
+
+configuracion borres plugins de ia
+y tambien borrarlos del package json
