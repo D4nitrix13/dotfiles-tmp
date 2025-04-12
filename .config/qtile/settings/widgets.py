@@ -33,7 +33,7 @@ from libqtile import qtile, widget
 from settings.theme import colors, img
 
 
-def base(fg: str = "text", bg: str = "dark") -> Dict[str, str]:
+def base(*, fg: str = "text", bg: str = "dark") -> Dict[str, str]:
     """
     Returns a dictionary with foreground and background colors based on the
     keys defined in the `colors` dictionary.
@@ -51,7 +51,7 @@ def base(fg: str = "text", bg: str = "dark") -> Dict[str, str]:
     }
 
 
-def text_box(fontsize=20) -> Dict[str, Union[str, int]]:
+def text_box(*, fontsize=20) -> Dict[str, Union[str, int]]:
     """
     Returns default parameters for a TextBox widget.
 

@@ -19,11 +19,13 @@ Requires:
 # Gitlab: https://gitlab.com/D4nitrix13
 # Correo electrónico: danielperezdev@proton.me
 
+import json
+import subprocess
 from io import TextIOWrapper
 from os import listdir, path
 from typing import Dict
+
 from settings.path import home, qtile_path
-import json, subprocess
 
 f: TextIOWrapper
 default_theme: str = "dark-grey"
@@ -51,7 +53,7 @@ img_path: str = path.join(theme_path, "img")
 i: str
 
 
-def get_image_name(image: str) -> str:
+def get_image_name(*, image: str) -> str:
     """
     Extracts the base name of an image file without its extension.
 

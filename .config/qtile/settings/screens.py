@@ -17,7 +17,7 @@ Globals:
 # Gitlab: https://gitlab.com/D4nitrix13
 # Correo electrónico: danielperezdev@proton.me
 
-from typing import List
+from typing import Any, List
 
 from libqtile.bar import Bar
 from libqtile.config import Screen
@@ -28,7 +28,7 @@ from settings.widgets import bottom_widgets, top_widgets
 # import subprocess
 
 
-def status_bar(w) -> Bar:
+def status_bar(*, w: Any) -> Bar:
     """
     Creates a Qtile Bar with the given widgets and default styling.
 
