@@ -5,6 +5,7 @@
 .xsession-errors.old
 .osh-update
 .Xauthority
+.pypirc
 
 # Directory
 Downloads/
@@ -23,7 +24,6 @@ yay/
 .oh-my-zsh/
 .phpbrew/
 .pki/
-pycrypy/
 .pyenv/
 .rustup/
 .sdkman/
@@ -32,5 +32,5 @@ pycrypy/
 .vscode/
 .dotnet/
 .rest-client/
-smashito/
 
+pycrypy/
