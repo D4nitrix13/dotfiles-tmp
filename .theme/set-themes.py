@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
 import json
 import subprocess
 from io import TextIOWrapper
@@ -33,6 +38,7 @@ def main() -> None:
         with open(file=qtile_theme_file, mode="w") as f:
             json.dump(obj=qtile_config, fp=f)
 
+    # subprocess.call(args=["qtile", "cmd-obj", "-o", "cmd", "-f", "restart"])
     subprocess.call(args=["notify-send", "-u", "normal", "Theme Set!"])
     return None
 

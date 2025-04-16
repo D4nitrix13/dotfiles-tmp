@@ -33,4 +33,5 @@ yay/
 .dotnet/
 .rest-client/
 
-pycrypy/
+# Directory Special
+Code/
