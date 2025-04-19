@@ -1,4 +1,5 @@
 # https://github.com/catppuccin/dunst
+
 # See dunst(5) for all configuration options
 
 [global]
@@ -26,11 +27,11 @@
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 350
+    width = 500
 
     # The height of a single notification, excluding the frame.
     # dynamic height from 0 to 300
-    height = (0, 300)
+    height = (0, 500)
     # constant height of 300
     # height = 300
     # NOTE: Dunst from version 1.11 and older don't support dynamic height
@@ -118,7 +119,7 @@
     # If value is greater than 0, separator_height will be ignored and a border
     # of size frame_width will be drawn around each notification instead.
     # Click events on gaps do not currently propagate to applications below.
-    gap_size = 0
+    gap_size = 15
 
     # Define a color for the separator.
     # possible values are:
@@ -127,6 +128,7 @@
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
     separator_color = frame
+
     highlight = "#89b4fa"
 
     # Sort type.
@@ -224,7 +226,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Adwaita
+    icon_theme = Material-Black-Blueberry-Suru
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -344,7 +346,7 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#1e1e2e"
-    foreground = "#cdd6f4"
+    foreground = "#a6adc8"
     timeout = 10
     # Icon for notifications with low urgency
     default_icon = dialog-information

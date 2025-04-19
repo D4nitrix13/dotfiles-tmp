@@ -1,4 +1,4 @@
-# https://github.com/dracula/dunst/blob/master/dunstrc
+# Theme: material-ocean
 
 # See dunst(5) for all configuration options
 
@@ -128,7 +128,8 @@
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
     separator_color = frame
-    highlight = "#61afef"
+
+    highlight = "#F07178"
 
     # Sort type.
     # possible values are:
@@ -345,14 +346,14 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#0f101a"
-    foreground = "#cdd6f4"
+    foreground = "#c3e88d"
     timeout = 60000
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
     background = "#0f101a"
-    foreground = "#cdd6f4"
+    foreground = "#f1ffff"
     timeout = 60000
     override_pause_level = 30
     # Icon for notifications with normal urgency
@@ -360,7 +361,7 @@
 
 [urgency_critical]
     background = "#0f101a"
-    foreground = "#cdd6f4"
+    foreground = "#fb9f7f"
     frame_color = "#f06292"
     timeout = 60000
     # timeout = 0
