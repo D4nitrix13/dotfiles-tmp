@@ -79,6 +79,14 @@ return {
             icon = "󱗞", -- Set the icon for the mode
           },
         },
+
+        -- lualine_z = {
+        --   {
+        --     'datetime',
+        --     -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+        --     style = '%H:%M:%S %p',
+        --   }
+        -- },
       },
     },
   },
