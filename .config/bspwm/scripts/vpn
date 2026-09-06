@@ -1,0 +1,11 @@
+#!/bin/sh
+ 
+VPN_INTERFACE=tun0
+IFACE=$(/bin/ifconfig | grep $VPN_INTERFACE | /bin/awk '{print $1}' | /bin/tr -d ':')
+
+# 󰆧 -> nf-md-cube_outline
+if [ "$IFACE" = "$VPN_INTERFACE" ]; then
+    /bin/echo "%{F#1bbf3e}󰆧 %{F#ffffff}$(/bin/ifconfig $VPN_INTERFACE | /bin/grep "inet " | /bin/awk '{print $2}')%{u-}"
+else
+    /bin/echo "%{F#1bbf3e}󰆧 %{u-}Disconnected"
+fi

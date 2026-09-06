@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# 󰈀 -> nf-md-ethernet
+ICON=󰈀
+
+/bin/echo "%{F#2495e7}$ICON %{F#ffffff}$(/bin/ifconfig enp10s0 | /bin/grep "inet " | /bin/awk '{print $2}')%{u-}"

@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+if /bin/bspc query -N -n focused.floating >/dev/null; then
+  declare -i step=20
+else
+  declare -i step=100
+fi
+
+case "$1" in
+west)
+  dir=right
+  falldir=left
+  x="-$step"
+  y=0
+  ;;
+east)
+  dir=right
+  falldir=left
+  x="$step"
+  y=0
+  ;;
+north)
+  dir=top
+  falldir=bottom
+  x=0
+  y="-$step"
+  ;;
+south)
+  dir=top
+  falldir=bottom
+  x=0
+  y="$step"
+  ;;
+esac
+
+/bin/bspc node -z "$dir" "$x" "$y" || /bin/bspc node -z "$falldir" "$x" "$y"

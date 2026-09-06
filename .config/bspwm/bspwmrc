@@ -1,0 +1,30 @@
+#! /bin/sh
+
+/bin/pgrep -x sxhkd > /dev/null || /bin/sxhkd &
+
+/bin/bspc monitor -d I II III IV V VI VII VIII IX X
+
+/bin/bspc config border_width         2
+/bin/bspc config window_gap          12
+
+/bin/bspc config split_ratio          0.52
+/bin/bspc config borderless_monocle   true
+/bin/bspc config gapless_monocle      true
+
+/bin/bspc rule -a Gimp desktop='^8' state=floating follow=on
+/bin/bspc rule -a Chromium desktop='^2'
+/bin/bspc rule -a mplayer2 state=floating
+/bin/bspc rule -a Kupfer.py focus=on
+/bin/bspc rule -a Screenkey manage=off
+
+/bin/bspc config border_width 0
+
+# /bin/bspc config pointer_modifier mod4
+# /bin/bspc config pointer_action2 toggle
+
+
+# Script Launch
+~/.config/polybar/launch.sh
+
+# Burp Suite
+# wmname LG3D &

@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+ICON=󰓾
+# 󰓾 -> nf-md-target
+
+# Check if the file ~/.local/bin/target exists
+file="$HOME/.local/bin/target"
+
+# Check if the file exists (-f) and contains at least one non-whitespace character (i.e., it's not empty or only spaces/newlines)
+if [ -f "$file" ] && grep -q '[^[:space:]]' "$file"; then
+  ip_address=$(/bin/awk '{print $1}' $file)
+  machine_name=$(/bin/awk '{print $2}' $file)
+
+  # Check if both fields were extracted correctly
+  if [ "$ip_address" ] && [ "$machine_name" ]; then
+    /bin/echo "%{F#e51d0b}$ICON %{F#ffffff}$ip_address%{u-} - $machine_name"
+  else
+    # Show warning if content format is invalid or incomplete
+    /bin/echo "%{F#e51d0b}$ICON %{u-}%{F#ffffff} Invalid target content"
+  fi
+
+else
+  # Show default message if the file doesn't exist
+  /bin/echo "%{F#e51d0b}$ICON %{u-}%{F#ffffff} No target"
+fi
