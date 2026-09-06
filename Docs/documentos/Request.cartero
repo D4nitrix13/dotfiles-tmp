@@ -1,0 +1,15 @@
+version = 1
+url = "http://localhost:8080/v1/login"
+method = "POST"
+
+[body]
+type = "raw"
+format = "json"
+body = """
+{
+    "username": "demo",
+    "password": "pass"
+}"""
+
+[headers]
+Content-Type = "application/json"

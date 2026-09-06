@@ -1,0 +1,25 @@
+para cambiar de shell primero debemos meterlo
+
+en /etc/shells
+
+echo /home/linuxbrew/.linuxbrew/bin/zsh | sudo tee -a /etc/shells
+echo /home/linuxbrew/.linuxbrew/bin/fish | sudo tee -a /etc/shells
+echo /home/linuxbrew/.linuxbrew/bin/nu | sudo tee -a /etc/shells
+
+
+```bash
+# Pathnames of valid login shells.
+# See shells(5) for details.
+
+/bin/sh
+/bin/bash
+/bin/rbash
+/usr/bin/sh
+/usr/bin/bash
+/usr/bin/rbash
+/usr/bin/systemd-home-fallback-shell
+/usr/bin/git-shell
+/home/linuxbrew/.linuxbrew/bin/zsh
+/home/linuxbrew/.linuxbrew/bin/fish
+/home/linuxbrew/.linuxbrew/bin/nu
+```

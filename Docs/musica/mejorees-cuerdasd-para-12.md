@@ -1,0 +1,1 @@
+1. <https://www.daddario.com/products/guitar/acoustic-guitar/phosphor-bronze/ej38-phosphor-bronze-12-string-acoustic-guitar-strings-light-10-47/?srsltid=AfmBOopIl_WU0rDYJmbWa-HD_Gp9sF8dyYqlKGhVrATIoIsVs0-khZBt>

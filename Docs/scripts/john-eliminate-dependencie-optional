@@ -1,0 +1,11 @@
+yay -Rns john
+[sudo] password for d4nitrix13:
+checking dependencies...
+:: boost-libs optionally requires openmpi: for mpi support
+
+Packages (7) hwloc-2.12.1-1  libfabric-2.1.0-1  openmpi-5.0.7-5  openpmix-5.0.8-1  openucx-1.18.1-2  prrte-3.0.11-1
+             john-1.9.0.jumbo1-11
+
+Total Removed Size:  98.03 MiB
+
+:: Do you want to remove these packages? [Y/n] 

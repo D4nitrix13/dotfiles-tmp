@@ -1,0 +1,145 @@
+Insertar:
+
+tecla i antes del ultimo caracter del cursor
+tecla a despues del ultiomo caracter 
+
+salir tecla escape ctrl + c
+
+movilidad
+
+h izquierda 
+
+l derecha
+
+k arriba
+
+j abajo
+
+
+si ponemos un num intero y despues h o l o k o j se desplazara dependiendo del numero
+
+
+gg hasta arriba
+shift + g hasta abajo
+
+ir linea concreta :num int
+
+w se mueve
+b se mueve
+e se mueve
+ge se mueve
+
+} se mueve entre linea de abajo blanco
+{ ir a linea en blanco hacia arriba
+
+shift + o hace
+o hacer
+shift + a  hace
+shift 0 hace 
+
+delete
+
+dd borra
+
+dw delete word borra
+db borra para atras
+
+u -> ctrl + z
+ctrl + r -> ctrl + y
+
+d  + num 2  + w borra 2 
+
+d + w
+
+t + letter hace
+f + letter hace
+
+num + f + letter hace
+num + t + letter hace
+
+visual v
+
+v + $ + c hace
+shift + v
+
+p pegar
+shift + p hacer
+
+v + w selecciona palabra
+
+remplazar
+:%s/palabra/new-palabra/g
+
+esto es para deactivar el resalto
+:nohlsearch
+
+
+c + w sobre escribimos y luego ponemos . nos repite la accion
+
+grabar macro
+
+q y una letter por ejemplo m
+
+q + m 
+para para grabar q
+
+y luego hacer
+@ + m
+
+aplicar macro a todo el documento
+:%norm ! @<name-macro>
+:%norm ! @m
+
+:%normal ! @<name-macro>
+:%normal ! @m
+
+aplicar macro en un rango de linea
+
+:<linea de inicio>,<linea de terminaicion>normal ! @m
+
+:2,5norm ! @m
+
+:2,5normal ! @m
+
+:split ~/.zhsrc
+
+:vsplit ~/.zhsrc
+
+
+control + w + tecla-navegacion
+
+control + w + h
+control + w + j
+control + w + k
+control + w + l
+
+
+esto hace
+bd!
+
+cambiar tamaño
+
+Ctrl + ↑  → Aumenta el alto de la ventana
+Ctrl + ↓  → Disminuye el alto de la ventana
+Ctrl + ←  → Disminuye el ancho de la ventana
+Ctrl + →  → Aumenta el ancho de la ventana
+
+:bnext o :bn → Ir al siguiente buffer.
+
+
+:bprev o :bp → Ir al buffer anterior.
+
+esto hacer
+] + b
+[ + b
+
+no recomendado instalar usar ripgrep
+https://archlinux.org/packages/extra/x86_64/the_silver_searcher/
+the_silver_searcher
+
+yay -S universal-ctags-git
+sudo pacman -Syu --noconfirm ranger
+
+cp /usr/share/doc/ranger/config/rc.conf ~/.config/ranger
+
+git clone --depth=1 --verbose --progress --ipv4 https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins

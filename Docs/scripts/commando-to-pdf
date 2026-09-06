@@ -1,0 +1,1 @@
+libreoffice --headless --convert-to pdf --outdir . "lab4 Daniel.docx"

@@ -1,0 +1,64 @@
+Ejecutar luego
+
+modificar directorio d4nitrix13
+
+:Lazy update
+
+-- Dependencies: pipx install pyright ruff 
+Soporte para php & laravel
+
+https://github.com/microsoft/pyright/discussions/9815
+
+rustup default stable
+
+rustup show
+
+rustup component add rust-analyzer
+
+no Dependencies
+cargo install mdcat
+
+npm install -g neovim
+:TSInstall css latex norg scss svelte typst vue
+
+npm install -g neovim
+pipx install neovim
+
+sudo apt install texlive-xetex
+npm install -g @mermaid-js/mermaid-cli
+brew update && brew upgrade && brew cleanup
+
+# o opcionalmente
+brew upgrade neovim
+rustup update
+
+npm install -g intelephense
+
+npm list -g --depth=0
+
+sudo apt-get install php8.3-xml -y
+# https://github.com/PHPCSStandards/PHP_CodeSniffer/
+composer global require friendsofphp/php-cs-fixer
+
+npm install -g dockerfile-language-server-nodejs
+npm install -g @microsoft/compose-language-service
+npm install -g typescript typescript-language-server
+
+
+composer global require pestphp/pest --with-all-dependencies
+
+# Ejecutar Tenemos que hacerlo manualmente ya que no
+TSInstall blade
+
+
+# ok para python 
+
+pipx install ruff-lsp
+
+comandos
+
+require'lspconfig'.intelephense.setup{}
+:messages
+:LspInfo
+:LspStart <lsp-server>
+:Lazy reload
