@@ -1,0 +1,1 @@
+/home/d4nitrix13/.local/share/omarchy/default/elephant/omarchy_unlocks.lua
