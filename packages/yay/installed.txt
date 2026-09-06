@@ -1,0 +1,14 @@
+epson-inkjet-printer-escpr
+epson-inkjet-printer-escpr2
+freelens-bin
+hadolint-bin
+k6
+mailpit-bin
+mdbtools
+ptpython
+python-pyodbc
+redisinsight-bin
+rstudio-desktop-bin
+ttf-ms-fonts
+ttf-vista-fonts
+wlroots-asan-git
