@@ -1,0 +1,5 @@
+https://github.com/catppuccin/kitty
+https://github.com/dexpota/kitty-themes/tree/master
+
+sudo pacman -S xsettingsd
+xsettingsd &
