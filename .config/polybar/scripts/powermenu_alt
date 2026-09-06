@@ -1,0 +1,36 @@
+#!/bin/bash
+
+theme="~/.config/polybar/scripts/themes/tokyonight.rasi"
+rofi_command="/bin/rofi -theme $theme"
+uptime=$(/bin/uptime -p | /bin/sed -e 's/up //g')
+
+# Options
+shutdown=" Shutdown"
+reboot=" Restart"
+lock=" Lock"
+suspend=" Sleep"
+logout=" Logout"
+
+# Variable passed to rofi
+options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+
+chosen="$(/bin/echo -e "$options" | $rofi_command -p "System" -dmenu -selected-row 0)"
+case $chosen in
+    $shutdown)
+        /bin/systemctl poweroff
+        ;;
+    $reboot)
+        /bin/systemctl reboot
+        ;;
+    $lock)
+        "$HOME/Scripts/lock"
+        # Image: /usr/share/backgrounds/33.png  
+        ;;
+    $suspend)
+        /bin/systemctl suspend
+        ;;
+    $logout)
+        /bin/loginctl terminate-session "$XDG_SESSION_ID"
+        ;;
+esac
+
