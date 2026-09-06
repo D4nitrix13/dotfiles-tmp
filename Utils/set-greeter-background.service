@@ -1,0 +1,11 @@
+[Unit]
+Description=Set random background for LightDM greeter
+Before=lightdm.service
+
+[Service]
+Type=oneshot
+ExecStart=/root/set-random-greeter-background.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
