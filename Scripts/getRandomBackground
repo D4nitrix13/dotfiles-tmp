@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Set the directory where background images are stored
+path="/usr/share/backgrounds/Wallpapers"
+
+# Create an array with all image files in the directory (jpg, jpeg, png, webp)
+list=($path/*.{jpeg,jpg,png,webp})
+
+# Generate a random index based on the number of images
+index=$(($RANDOM % ${#list[@]}))
+
+# Print the randomly selected image path
+/bin/echo "${list[$index]}"

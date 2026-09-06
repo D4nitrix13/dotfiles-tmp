@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Screenshot script for X11 environments.
+# This script relies on X11 utilities:
+# - xdpyinfo: retrieves display information from the X server
+# - scrot: captures screenshots in X11
+# - xclip: copies data to the X11 clipboard
+
+# Directory where screenshots will be stored
+DIRECTORY="$HOME/Images/Screenshots"
+
+# Create the directory if it does not exist
+/bin/mkdir -p "$DIRECTORY"
+
+# Generate a unique filename for the screenshot.
+# The filename includes:
+# - current date and time: YYYY-MM-DD-HHMMSS
+# - current screen resolution obtained from xdpyinfo
+# - "_scrot" suffix to indicate the capture method
+#
+# Example:
+# 2026-05-27-153010_1920_1080_scrot.png
+FILENAME="$(/bin/date +%Y-%m-%d-%H%M%S)_$(/bin/xdpyinfo | /bin/awk '/dimensions:/ {print $2}' | /bin/sed 's/x/_/')_scrot.png"
+
+# Capture the entire screen and save the image
+/bin/scrot "$DIRECTORY/$FILENAME"
+
+# Copy the screenshot image to the X11 clipboard as PNG
+/bin/xclip -selection clipboard -t image/png -i "$DIRECTORY/$FILENAME"

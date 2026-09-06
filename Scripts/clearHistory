@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+function help_panel() {
+  /bin/echo -e "\n[x] Usage: $0 <shell_name>"
+  /bin/echo "Available shells: zsh, fish, bash, nushell"
+  /bin/echo "Use 'all' to delete history for all supported shells."
+  exit 1
+}
+
+if [ "$#" -gt 1 ]; then
+  help_panel
+fi
+
+shell=$1
+listShells=("zsh" "fish" "bash" "nushell" "all")
+found=false
+
+for s in "${listShells[@]}"; do
+  if [ "$shell" = "$s" ]; then
+    found=true
+    break
+  fi
+done
+
+if ! $found; then
+  help_panel
+fi
+
+case "$shell" in
+bash)
+  /bin/echo "" >~/.bash_history
+  ;;
+zsh)
+  /bin/echo "" >~/.zsh_history
+  ;;
+fish)
+  /bin/echo "" >~/.local/share/fish/fish_history
+  ;;
+nushell)
+  /bin/echo "" >~/.config/nushell/history.txt
+  ;;
+all)
+  # Clear the command history for all supported shells
+  /bin/echo "" >~/.bash_history >~/.zsh_history >~/.local/share/fish/fish_history >~/.config/nushell/history.txt
+  ;;
+esac
+
+exit 0

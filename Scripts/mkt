@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/bin/mkdir -vp {nmap,content,exploits,scripts}

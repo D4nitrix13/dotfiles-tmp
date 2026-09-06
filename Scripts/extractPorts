@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+# ---------------------------------------------------------
+# Script: extractPorts.sh
+# Purpose: Extract IP address and open ports from Nmap output.
+# Copies the list of open ports to the clipboard (comma-separated).
+# ---------------------------------------------------------
+
+if [ "$1" ]; then
+  filename="$1"
+  if [ ! -f "$filename" ]; then
+    /bin/echo "File does not exist or is not a regular file."
+    exit 1
+  fi
+
+  tempFile="./extractPorts.tmp"
+
+  # Extract open ports from Nmap output (e.g., 80/open => 80)
+  ports="$(/bin/grep -oP '\d{1,5}/open' "$filename" | /bin/awk '{print $1}' FS='/' | /bin/xargs | /bin/tr ' ' ',')"
+
+  # Extract the first unique IP address found in the file
+  ipAddress="$(/bin/grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' "$filename" | /bin/sort -u | /bin/head -n 1)"
+
+  # Write info to a temporary file and show it with syntax highlighting
+  /bin/echo -e "\n[*] Extracting information...\n" >"$tempFile"
+  /bin/echo -e "\t[*] IP Address: $ipAddress" >>"$tempFile"
+  /bin/echo -e "\t[*] Open ports: $ports\n" >>"$tempFile"
+
+  # Copy the port list to clipboard
+  /bin/echo -n "$ports" | /bin/xclip -selection clipboard
+  /bin/echo -e "[*] Ports copied to clipboard\n" >>"$tempFile"
+
+  # Display the info with bat (fallback to cat if not installed)
+  if command -v bat &>/dev/null; then
+    /bin/bat -fl java "$tempFile"
+  else
+    /bin/cat "$tempFile" -n
+  fi
+
+  # Clean up
+  /bin/rm -f "$tempFile"
+else
+  name=$(basename $0)
+  /bin/echo -e "\nUsage: $name <nmap-output-file>\n"
+  /bin/echo "Description:"
+  /bin/echo "  Extracts the IP address and open ports from a grepable or normal Nmap output file."
+  /bin/echo "  Copies the list of open ports to the clipboard (comma-separated)."
+  /bin/echo
+  /bin/echo "Example:"
+  /bin/echo -e "  $name scan_result.nmap\n"
+  exit 1
+fi
+
+exit 0

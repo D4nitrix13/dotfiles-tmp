@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# This command refreshes the Arch Linux mirrorlist using Reflector.
+# - It filters mirrors from the United States, Mexico, Costa Rica, and Panama.
+# - Only HTTPS mirrors are considered for secure downloads.
+# - The 10 most recently updated mirrors are fetched and then sorted by download rate.
+# - Each mirror must respond within 5 seconds to establish a connection (--connection-timeout)
+#   and within 5 seconds to download the test file (--download-timeout).
+# - Finally, the resulting ranked mirrorlist is saved into /etc/pacman.d/mirrorlist,
+#   which pacman uses as its official list of repositories.
+sudo reflector --country 'United States','Mexico','Costa Rica','Panama' \
+  --protocol https --latest 10 --sort rate \
+  --connection-timeout 5 --download-timeout 5 \
+  --save /etc/pacman.d/mirrorlist

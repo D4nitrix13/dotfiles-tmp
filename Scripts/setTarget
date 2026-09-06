@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+function main() {
+  ip_address=$1
+  machine_name=$2
+  echo "$ip_address $machine_name" >~/.local/bin/target
+}
+
+main $1 $2

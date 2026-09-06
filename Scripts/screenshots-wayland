@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# Screenshot script for Wayland environments.
+# This script is recommended for Hyprland.
+# It uses:
+# - hyprctl: retrieves monitor information from Hyprland
+# - grim: captures screenshots on Wayland
+# - wl-copy: copies data to the Wayland clipboard
+
+# Directory where screenshots will be stored
+DIRECTORY="$HOME/Images/Screenshots"
+
+# Create the directory if it does not exist
+/bin/mkdir -p "$DIRECTORY"
+
+# Get the current monitor resolution and convert 1920x1080 to 1920_1080
+RESOLUTION="$(/bin/hyprctl monitors | /bin/awk '/@/ {print $1; exit}' | /bin/cut -d '@' -f 1 | /bin/sed 's/x/_/')"
+
+# Generate a unique filename for the screenshot
+# Format: YYYY-MM-DD-HHMMSS_WIDTH_HEIGHT_grim.png
+FILENAME="$(/bin/date +%Y-%m-%d-%H%M%S)_${RESOLUTION}_grim.png"
+FILE="$DIRECTORY/$FILENAME"
+
+# Capture the entire screen and save the image
+/bin/grim "$FILE"
+
+# Copy the screenshot image to the Wayland clipboard as PNG
+/bin/wl-copy < "$FILE"

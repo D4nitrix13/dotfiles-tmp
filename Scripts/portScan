@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Scanning Ports v1.0.0
+# Autor: Daniel Benjamin Perez Morales 
+# GitHub: https://github.com/D4nitrix13 
+# GitLab: https://gitlab.com/D4nitrix13 
+# Correo electrónico: danielperezdev@proton.me
+
+trap ctrl_c INT;
+
+function ctrl_c() {
+  /bin/echo -e "\n [x] Stop Scanning.... \n";
+  exit 1;
+}
+
+if [ $1 ]; then
+  host=$1;
+  /bin/echo Scanning host: $host;
+  declare -i port;
+  for port in $(/bin/seq 1 1 65535); do
+    /bin/timeout 1 /bin/bash -c "/bin/echo '' > /dev/tcp/$host/$port" 2>/dev/null && /bin/echo [*] Open Port $port & disown;
+  done; /bin/wait;
+else
+  /bin/echo -e "\n [x] Usage: $0 <host> \n";
+fi
+
+exit 0;

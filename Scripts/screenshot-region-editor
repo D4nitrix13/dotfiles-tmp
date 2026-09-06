@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Capture a selected region and pipe it into swappy for annotation.
+
+set -euo pipefail
+
+/usr/bin/grim -g "$(/usr/bin/slurp)" - | /usr/bin/swappy -f -

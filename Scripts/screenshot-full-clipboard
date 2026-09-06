@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Capture the full screen: save to ~/Images/Screenshots AND copy to Wayland clipboard.
+
+set -euo pipefail
+
+DIRECTORY="/home/d4nitrix13/Images/Screenshots"
+/bin/mkdir -p "$DIRECTORY"
+
+FILENAME="$(/bin/date +%Y-%m-%d-%H%M%S)_grim.png"
+FILE="$DIRECTORY/$FILENAME"
+
+/bin/grim "$FILE"
+/usr/bin/wl-copy < "$FILE"

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+/bin/scrub -p dod $1
+/bin/shred -zun 10 -v $1

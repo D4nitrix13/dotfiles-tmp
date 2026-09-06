@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+
+# Example: https://github.com/Raymo111/i3lock-color/blob/master/examples/lock.sh
+# Theme -> Tokyo Night
+BLANK='#00000000'
+CLEAR='#1a1b26cc'
+DEFAULT='#1a1b26cc'
+TEXT='#c0caf5ff'
+WRONG='#f7768eff'
+VERIFYING='#7aa2f7ff'
+
+# Theme -> Dracula (Dark)
+# BLANK='#00000000'
+# CLEAR='#282a36cc'
+# DEFAULT='#282a36cc'
+# TEXT='#f8f8f2ff'
+# WRONG='#ff5555ff'
+# VERIFYING='#50fa7bff'
+
+# Theme -> Catppuccin Mocha
+# BLANK='#00000000'
+# CLEAR='#1e1e2ecc'
+# DEFAULT='#1e1e2ecc'
+# TEXT='#cdd6f4ff'
+# WRONG='#f38ba8ff'
+# VERIFYING='#a6e3a1ff'
+
+# Font
+FONT="JetBrainsMono Nerd Font Mono"
+# Info User
+email=danielperezdev@proton.me
+name=D4nitrix13
+
+/bin/i3lock \
+  --insidever-color=$CLEAR \
+  --ringver-color=$VERIFYING \
+  --insidewrong-color=$CLEAR \
+  --ringwrong-color=$WRONG \
+  --inside-color=$BLANK \
+  --ring-color=$DEFAULT \
+  --line-color=$BLANK \
+  --separator-color=$DEFAULT \
+  --verif-color=$TEXT \
+  --wrong-color=$TEXT \
+  --time-color=$TEXT \
+  --date-color=$TEXT \
+  --layout-color=$TEXT \
+  --keyhl-color=$WRONG \
+  --bshl-color=$WRONG \
+  --screen 1 \
+  --blur 5 \
+  --clock \
+  --indicator \
+  --radius=130 \
+  --keylayout 1 \
+  --date-str="%A, %d of %B %Y" \
+  --time-str="%I:%M:%S %p" \
+  --verif-text="Verifying..." \
+  --wrong-text="Wrong!" \
+  --noinput-text="No Input" \
+  --lock-text="Locking..." \
+  --greeter-text="$name. Mail to $email" \
+  --greeter-pos="w/2:h-100" \
+  --greeter-color=$TEXT \
+  --greeter-font="$FONT" \
+  --time-font="$FONT" \
+  --date-font="$FONT" \
+  --layout-font="$FONT"
