@@ -1,0 +1,304 @@
+# =========================================================
+# Author: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# GitLab: https://gitlab.com/D4nitrix13
+# Email: danielperezdev@proton.me
+# =========================================================
+
+# =========================================================
+# AI / CLI Tools
+# =========================================================
+.claude.json
+.claude/
+.opencode/
+.codex/
+
+# =========================================================
+# opencode: track config + themes, ignore everything else
+# =========================================================
+.config/opencode/node_modules/
+.config/opencode/package.json
+.config/opencode/package-lock.json
+.config/opencode/prompts/
+.config/opencode/skills/
+.config/opencode/skill/
+.config/opencode/agents/
+.config/opencode/commands/
+.config/opencode/plugins/
+.config/opencode/profiles/
+.config/opencode/tui.json
+.config/opencode/tui-plugins/
+.config/opencode/AGENTS.md
+
+# =========================================================
+# App Configs / User-specific configs
+# =========================================================
+.config/whatsdesk/
+.config/github-copilot/auth.db*
+.config/github-copilot/auth.db-shm
+.config/github-copilot/auth.db-wal
+.config/hypr/monitors.conf
+.config/hypr/workspaces.conf
+.config/nwg-displays/
+.config/auto-updates-policy/
+.config/qtile/mypy.ini
+
+# =========================================================
+# Node / NPM global user config
+# =========================================================
+# .npm-global/
+
+# =========================================================
+# User Content Directories
+# =========================================================
+Desktop/
+Downloads/
+Documents/
+Images/
+Pictures/
+Video/
+Videos/
+Wallpapers/
+.bash_history
+.python_history
+
+# =========================================================
+# Hyprland Local State / Backups
+# =========================================================
+.config/hypr/*.bak
+.config/hypr/.atl/
+.config/hypr/hyprctl-*
+
+# =========================================================
+# Omarchy volatile state (current wallpaper symlink, etc.)
+# =========================================================
+.config/omarchy/current/background
+
+# =========================================================
+# Personal Workspace & Projects
+# =========================================================
+Backups/
+Code/
+Projects/
+Work/
+omarchy-on-cachyos/
+
+# =========================================================
+# Sensitive & Private Files
+# =========================================================
+*.kdbx
+.kube/
+*.zip
+*.env
+.env
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+.pypirc
+.gnupg/
+.ssh/
+Credentials/
+credentials/
+secrets/
+
+# =========================================================
+# Shell & Session History
+# =========================================================
+.*_history
+.*history
+.viminfo
+.xsession-errors
+.xsession-errors.old
+.osh-update
+.lesshst
+.wget-hsts
+.zcompdump*
+.zcompdump*.zwc
+.zcompdump*.lock
+
+# =========================================================
+# System & Environment Files
+# =========================================================
+.Xauthority
+
+# =========================================================
+# Package Managers & Development Environments
+# =========================================================
+.cargo/
+.rustup/
+.npm/
+.pyenv/
+.phpbrew/
+.luaenv/
+.sdkman/
+.bun/
+.dotnet/
+.bundle/
+go/
+.purple/
+.atuin/
+
+# =========================================================
+# Development Tools & IDEs
+# =========================================================
+.vscode/
+.config/Lens/
+.config/composer/vendor/
+.eclipse/
+.java/
+.swt/
+.subversion/
+.ipython/
+.jupyter/
+.intelephense/
+
+# =========================================================
+# Containers & Virtualization
+# =========================================================
+.docker/
+.minikube/
+VirtualBox VMs/
+
+# =========================================================
+# Security & Analysis Tools
+# =========================================================
+.john/
+.nxc/
+.BurpSuite/
+.zenmap/
+
+# =========================================================
+# Browsers & User Applications
+# =========================================================
+.mozilla/
+.ollama/
+.epsonscan2/
+
+# Browser local state (NOT to be versioned)
+.config/BraveSoftware/
+.config/google-chrome/
+.config/google-chrome-beta/
+.config/google-chrome-for-testing/
+.config/google-chrome-unstable/
+.config/microsoft-edge-dev/
+.config/vivaldi/
+.config/vivaldi-snapshot/
+.config/chromium/
+
+# 1Password secrets / state
+.config/1Password/
+.config/autostart/1password.desktop
+
+# GitHub CLI tokens
+.config/gh/
+
+# =========================================================
+# User Directories, Cache & Local App Data
+# =========================================================
+.cache/
+.local/*
+.local/share/
+.local/state/
+.local/lib/
+.var/
+.pki/
+.atl/
+.codegraph/
+.agents-wshobson/
+agents-wshobson/
+.hplip/
+
+# =========================================================
+# Fish shell: completions are generated, never versioned
+# =========================================================
+.config/fish/completions/
+.config/fish/fish_variables
+.config/fish/config.fish:Zone.Identifier
+
+# =========================================================
+# Custom Tools & Utilities
+# =========================================================
+yay/
+.tmux/
+.oh-my-bash/
+.oh-my-zsh/
+.fly/
+.rest-client/
+.config/eden/
+.parsec/
+.parsec-persistent/
+
+# =========================================================
+# Temporary / scratch / downloads leftovers
+# =========================================================
+REM_*/
+REM_extracted*/
+REM_install/
+REM_schema/
+*.tmp
+*.bak
+*~
+
+# =========================================================
+# Local tool state / private or machine-specific config
+# =========================================================
+.agents/
+.pi/
+.vscode-shared/
+
+# =========================================================
+# Miscellaneous
+# =========================================================
+.fehbg
+flameshot.log
+mypy.ini
+borrar-caracter.md
+Hola Fede, espero que estés muy bien.md
+listar-atajos-de-teclado-omarchy.md
+prompt-para-chamba.md
+
+# =========================================================
+# Exceptions: packages
+# =========================================================
+!packages/
+!packages/yay/
+
+# =========================================================
+# Exceptions: specific local binaries
+# =========================================================
+!.local/
+!.local/bin/
+.local/bin/*
+!.local/bin/percentage
+!.local/bin/battery
+!.local/bin/brightness
+!.local/bin/volume
+
+# =========================================================
+# R / RStudio / Data Science Local State
+# =========================================================
+.RData
+.RDataTmp*
+.Rhistory
+R/
+
+# =========================================================
+# AI / Coding Assistants Local State
+# =========================================================
+.copilot/
+.cursor/
+.gentle-ai/
+.engram/
+
+# =========================================================
+# RedisInsight Local State
+# =========================================================
+.redis-insight/
+
+# =========================================================
+# Haskell / Stack Local State
+# =========================================================
+.stack/
+
