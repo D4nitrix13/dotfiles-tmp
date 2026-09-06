@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
+# ------------ Brightness ------------
+# nf-md-brightness_7 -> 󰃠
+# nf-md-brightness_6 -> 󰃟
+# nf-md-brightness_5 -> 󰃞
+# nf-md-brightness_4 -> 󰃝    
+(( br = $(brightnessctl get) * 100 / 255 ))
+echo -n "$(percentage $br 󰃝  󰃞  󰃟  󰃠 ) $br% "

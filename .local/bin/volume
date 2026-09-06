@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
+# Delete Script
+
+# ------------ Volume ------------
+# nf-fa-volume_xmark -> 
+# nf-fa-volume_off -> 
+# nf-fa-volume_down -> 
+# nf-md-volume_high -> 󰕾
+# nf-fa-volume_high -> 
+declare -i vol=`pamixer --get-volume`
+if [[ `pamixer --get-mute` == "true" ]]; then
+    echo -n "$(icon ) $vol% "
+else if [[ $vol -ge 80 ]]; then
+        echo -n "$(percentage $vol   󰕾 ) $vol% "
+    else 
+        echo -n "$(percentage $vol   󰕾 ) $vol%"
+    fi
+fi

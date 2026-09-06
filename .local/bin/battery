@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Autor: Daniel Benjamin Perez Morales
+# GitHub: https://github.com/D4nitrix13
+# Gitlab: https://gitlab.com/D4nitrix13
+# Correo electrónico: danielperezdev@proton.me
+
+# If this script doesn't work look at the output of upower -e and upower -d
+
+# ------------ Battery ------------
+# nf-fa-battery_1 -> 
+# nf-fa-battery_2 -> 
+# nf-fa-battery_3 -> 
+# nf-fa-battery_4 -> 
+# nf-weather-lightning -> 
+battery_path=false
+
+if upower -e | grep -iq "/org/freedesktop/UPower/devices/battery_BAT1"; then
+    battery_path="/org/freedesktop/UPower/devices/battery_BAT1"
+elif upower -e | grep -iq "/org/freedesktop/UPower/devices/battery_BAT0"; then
+    battery_path="/org/freedesktop/UPower/devices/battery_BAT0"
+fi
+
+if [[ "$battery_path" != "false" ]]; then
+    if (( i % 60 == 0 )); then
+        bat=$(upower -i "$battery_path" | grep percentage | sed 's/ *percentage: *//g')
+        state=$(upower -i "$battery_path" | grep state | sed 's/ *state: *//g')
+    fi
+
+    if [[ "$state" == "charging" || "$state" == "fully-charged" ]]; then
+        echo -n "$(icon )"
+    else
+        echo -n "$(percentage "$bat"    )"
+    fi
+
+    echo -n "$bat "
+fi
