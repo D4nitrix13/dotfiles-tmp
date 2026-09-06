@@ -3,11 +3,11 @@
 > Configuración personal de escritorio y shell para **CachyOS** sobre **Omarchy** (Hyprland).
 > Reproducible, modular, organizado por ámbito funcional, versionado por gestor de paquetes.
 
-[![Arch](https://img.shields.io/badge/Arch-CachyOS-1793D1?logo=arch-linux&logoColor=white)](#)
-[![Hyprland](https://img.shields.io/badge/WM-Hyprland-58E1FF?logo=hyprland&logoColor=black)](#)
-[![Omarchy](https://img.shields.io/badge/Distro-Omarchy-DB3B79)](#)
-[![Neovim](https://img.shields.io/badge/Editor-Neovim-57A143?logo=neovim&logoColor=white)](#)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](#)
+[![Arch](https://img.shields.io/badge/Arch-CachyOS-1793D1?logo=arch-linux&logoColor=white)](https://cachyos.org)
+[![Hyprland](https://img.shields.io/badge/WM-Hyprland-58E1FF?logo=hyprland&logoColor=black)](https://hyprland.org)
+[![Omarchy](https://img.shields.io/badge/Distro-Omarchy-DB3B79)](https://omarchy.org)
+[![Neovim](https://img.shields.io/badge/Editor-Neovim-57A143?logo=neovim&logoColor=white)](https://neovim.io)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## Descripción general
 
-Este repositorio versiona el directorio `\$HOME` completo de un escritorio
+Este repositorio versiona el directorio `$HOME` completo de un escritorio
 **CachyOS + Omarchy + Hyprland**. La idea es tener un setup reproducible en
 cualquier máquina con una instalación fresca del SO base, versionando:
 
@@ -45,43 +45,43 @@ etc.).
 
 ### Sistema base
 
-| Componente | Versión / Detalle |
-|---|---|
+| Componente   | Versión / Detalle               |
+| ------------ | ------------------------------- |
 | Distribución | CachyOS (Arch Linux optimizado) |
-| Init | systemd + UWSM |
-| Boot | GRUB con LUKS opcional |
-| Login | hyprland via `.xsession` |
+| Init         | systemd + UWSM                  |
+| Boot         | GRUB con LUKS opcional          |
+| Login        | hyprland via `.xsession`        |
 
 ### Escritorio (Hyprland stack)
 
-| Componente | Rol |
-|---|---|
-| **Hyprland** | Compositor Wayland + WM tiling principal |
-| **Omarchy** | Capa de opinionated defaults (DHH) — temas, hooks, branding |
-| **Waybar** | Barra de estado superior |
-| **Walker** | Lanzador de aplicaciones (default Omarchy) |
-| **Elephant** | Provider de menús contextuales para Walker |
-| **Mako** | Daemon de notificaciones |
-| **SwayOSD** | OSD de volumen, brillo y caps lock |
+| Componente   | Rol                                                         |
+| ------------ | ----------------------------------------------------------- |
+| **Hyprland** | Compositor Wayland + WM tiling principal                    |
+| **Omarchy**  | Capa de opinionated defaults (DHH) — temas, hooks, branding |
+| **Waybar**   | Barra de estado superior                                    |
+| **Walker**   | Lanzador de aplicaciones (default Omarchy)                  |
+| **Elephant** | Provider de menús contextuales para Walker                  |
+| **Mako**     | Daemon de notificaciones                                    |
+| **SwayOSD**  | OSD de volumen, brillo y caps lock                          |
 
 ### Shells
 
-| Shell | Uso |
-|---|---|
-| **Fish** | Shell interactivo por defecto (Fisher + plugins) |
-| **Zsh** | Alternativa con Powerlevel10k + Zoxide |
-| **Bash** | POSIX base, scripts |
-| **Nushell** | Shell estructurado para data exploration |
+| Shell       | Uso                                              |
+| ----------- | ------------------------------------------------ |
+| **Fish**    | Shell interactivo por defecto (Fisher + plugins) |
+| **Zsh**     | Alternativa con Powerlevel10k + Zoxide           |
+| **Bash**    | POSIX base, scripts                              |
+| **Nushell** | Shell estructurado para data exploration         |
 
 ### Terminales (multi-config)
 
-| Emulador | Notas |
-|---|---|
-| **Ghostty** | Default Omarchy, GPU-accelerated |
-| **Alacritty** | Alternativa ligera |
-| **Kitty** | GPU, rico en features |
-| **Foot** | Nativo Wayland puro |
-| **Wezterm** | Lua-config, multiplexer embebido |
+| Emulador      | Notas                            |
+| ------------- | -------------------------------- |
+| **Ghostty**   | Default Omarchy, GPU-accelerated |
+| **Alacritty** | Alternativa ligera               |
+| **Kitty**     | GPU, rico en features            |
+| **Foot**      | Nativo Wayland puro              |
+| **Wezterm**   | Lua-config, multiplexer embebido |
 
 ### Multiplexers
 
@@ -123,65 +123,172 @@ instalados) para sesiones X11 alternativas:
 
 ## Estructura del repositorio
 
-```
+```text
 $HOME/
-├── .config/                    # Configuraciones de aplicaciones
-│   ├── hypr/                   # Compositor Hyprland
-│   ├── omarchy/                # Capa Omarchy (temas, hooks, branding)
-│   ├── waybar/                 # Barra de estado
-│   ├── walker/, elephant/      # Lanzadores
-│   ├── mako/, swayosd/         # Notificaciones y OSD
-│   ├── fish/                   # Shell Fish
-│   ├── zsh -> (no tracked)     # Zsh usa archivos en raíz
-│   ├── nushell/                # Shell Nushell
-│   ├── carapace/, starship.toml
-│   ├── zellij/, tmux/          # Multiplexers
-│   ├── nvim/                   # Neovim + LazyVim
-│   ├── alacritty/, foot/, ghostty/, kitty/, wezterm/  # Terminales
-│   ├── bspwm/, qtile/, openbox/, spectrwm/, xmonad/   # DEs legacy
-│   ├── polybar/, tint2/, xmobar/                     # Bars legacy
-│   ├── sxhkd/, picom/                               # Auxiliares legacy
-│   ├── rofi/, dunst/                                 # Lanzadores/notif legacy
-│   ├── ranger/, xfce4/                               # File managers
-│   ├── bpytop/, htop/, fastfetch/, neofetch/         # Monitor sistema
-│   ├── lazygit/, lazydocker/, ptpython/, pgcli/      # Dev tools
-│   ├── opencode/                # AI workflow (SDD)
-│   ├── wiremix/, pavucontrol.ini                     # Audio
-│   ├── flameshot/              # Capturas de pantalla
-│   ├── calcurse/, imv/          # Utilidades
-│   ├── composer/               # PHP Composer
-│   └── .gitignore              # Exclusiones internas
+├── .config/
+│   ├── hypr/
+│   ├── omarchy/
+│   ├── waybar/
+│   ├── walker/
+│   ├── elephant/
+│   ├── mako/
+│   ├── swayosd/
+│   ├── fish/
+│   ├── nushell/
+│   ├── carapace/
+│   ├── starship.toml
+│   ├── zellij/
+│   ├── tmux/
+│   ├── nvim/
+│   ├── alacritty/
+│   ├── foot/
+│   ├── ghostty/
+│   ├── kitty/
+│   ├── wezterm/
+│   ├── bspwm/
+│   ├── qtile/
+│   ├── openbox/
+│   ├── spectrwm/
+│   ├── xmonad/
+│   ├── polybar/
+│   ├── tint2/
+│   ├── xmobar/
+│   ├── sxhkd/
+│   ├── picom/
+│   ├── rofi/
+│   ├── dunst/
+│   ├── ranger/
+│   ├── xfce4/
+│   ├── bpytop/
+│   ├── htop/
+│   ├── fastfetch/
+│   ├── neofetch/
+│   ├── lazygit/
+│   ├── lazydocker/
+│   ├── ptpython/
+│   ├── pgcli/
+│   ├── opencode/
+│   ├── wiremix/
+│   ├── pavucontrol.ini
+│   ├── flameshot/
+│   ├── calcurse/
+│   ├── imv/
+│   ├── composer/
+│   ├── hyprland-preview-share-picker/
+│   ├── haders
+│   ├── qt5ct/
+│   ├── qt6ct/
+│   ├── bash-env-json
+│   ├── bash-env.nu
+│   ├── user-dirs.dirs
+│   ├── user-dirs.locale
+│   ├── mimeapps.list
+│   ├── xdg-terminals.list
+│   ├── gnome-xdg-terminals.list
+│   ├── .gitignore
+│   └── .gsd-keyboard.settings-ported
 │
-├── .bashrc, .bash_profile, .bash_logout, .profile
-├── .zshenv, .zprofile, .zshrc, .p10k.zsh, .zoxide.nu
-├── .xsession, .XCompose, .dmrc, gnome.desktop
-├── .gitconfig, .gitignore
-├── .nanorc, .npmrc, .python-version
-├── .vimrc, .vim/               # Vim legacy
-├── .theme/                     # Selector de temas
-├── .screenlayout/              # Scripts arandr
-├── .local/bin/                 # Scripts propios (binarios versionados)
-├── Scripts/                    # Utilitarios bash (referenciados por Hyprland)
-├── Utils/                      # GRUB, LightDM, desktop themes
-├── Docs/                       # Notas, cheatsheets, prompts
-├── packages/                   # Manifiestos de paquetes
+├── .bashrc
+├── .bash_profile
+├── .bash_logout
+├── .profile
+├── .zshenv
+├── .zprofile
+├── .zshrc
+├── .p10k.zsh
+├── .zoxide.nu
+├── .xsession
+├── .XCompose
+├── .dmrc
+├── gnome.desktop
+├── .gitconfig
+├── .gitignore
+├── .nanorc
+├── .npmrc
+├── .python-version
+├── .vimrc
+├── .vim/
+├── .theme/
+├── .screenlayout/
+├── .local/bin/
+├── Scripts/
+├── Utils/
+├── Docs/
+├── packages/
 │   ├── pacman/installed.txt
 │   ├── yay/installed.txt
 │   ├── pipx/installed.txt
 │   ├── npm/installed.txt
 │   ├── cargo/installed.txt
 │   └── flatpak/installed.txt
-├── .sdirs                      # Marcadores de directorios
-├── .psqlrc                     # psql pager off
-└── .odbcinst.ini               # Driver ODBC mdbtools
+├── .sdirs
+├── .psqlrc
+└── .odbcinst.ini
 ```
+
+### Notas sobre archivos sueltos
+
+| Archivo / Directorio | Propósito |
+|---|---|
+| `.gitignore` (raíz) | Exclusiones globales: navegadores, IA, caches, historiales, secretos |
+| `.gitconfig` | Identidad del autor + helpers de difftool/Neovim |
+| `.xsession` | Arranque sesión X11, paths, ejecución Hyprland via UWSM |
+| `.XCompose` | Combinaciones de teclas para caracteres acentuados y símbolos |
+| `.dmrc` | Sesión predeterminada del display manager |
+| `gnome.desktop` | Entrada `.desktop` legacy de GNOME |
+| `.zshrc` y familia | Configuración Zsh con Powerlevel10k + Zoxide |
+| `.bashrc` y familia | Configuración Bash POSIX |
+| `.vimrc`, `.vim/` | Vim legacy como fallback de Neovim |
+| `.theme/` | Selector y catálogo de temas del sistema |
+| `.screenlayout/` | Scripts `arandr` para layouts de monitores |
+| `.local/bin/` | Binarios propios (4 scripts: percentage, battery, brightness, volume) |
+| `.nanorc` | Ajustes del editor Nano |
+| `.npmrc` | Defaults globales de npm |
+| `.python-version` | Versión de Python fijada por pyenv |
+| `Scripts/` | Scripts bash para Hyprland/sxhkd (screenshot, portScan, lock, etc.) |
+| `Utils/` | Recursos opcionales (GRUB, LightDM, desktop themes) |
+| `Docs/` | Notas, cheatsheets, prompts reutilizables |
+| `packages/` | Manifiestos de paquetes por gestor |
+| `.sdirs` | Marcadores de directorios para shells |
+| `.psqlrc` | Desactiva pager de `psql` para output directo |
+| `.odbcinst.ini` | Registra driver ODBC de mdbtools |
+| `packages/pacman/installed.txt` | Paquetes oficiales explícitos (458) |
+| `packages/yay/installed.txt` | Paquetes AUR explícitos (14) |
+
+### Notas sobre subdirectorios clave
+
+| Directorio | Propósito |
+|---|---|
+| `.config/hypr/` | Compositor Hyprland (bindings, monitors, idle, lock) |
+| `.config/omarchy/` | Capa Omarchy: temas activos, hooks, branding |
+| `.config/waybar/` | Barra de estado superior |
+| `.config/walker/`, `elephant/` | Lanzador + provider de menús |
+| `.config/mako/`, `swayosd/` | Notificaciones y OSD de volumen/brillo |
+| `.config/fish/` | Shell Fish (config, conf.d, functions, themes) |
+| `.config/nushell/` | Shell Nushell (config, env, history, bash-env bridge) |
+| `.config/zellij/`, `tmux/` | Multiplexers de terminal |
+| `.config/nvim/` | Neovim con LazyVim y plugins custom |
+| `.config/{alacritty,foot,ghostty,kitty,wezterm}/` | Emuladores de terminal (multi-config) |
+| `.config/{bspwm,qtile,openbox,spectrwm,xmonad}/` | DEs legacy X11 (sin paquetes instalados) |
+| `.config/{polybar,tint2,xmobar}/` | Status bars legacy |
+| `.config/{sxhkd,picom}/` | Auxiliares legacy de WMs X11 |
+| `.config/{rofi,dunst}/` | Lanzador y notificador legacy |
+| `.config/{ranger,xfce4}/` | Gestores de archivos |
+| `.config/{bpytop,htop,fastfetch,neofetch}/` | Monitorización del sistema |
+| `.config/{lazygit,lazydocker,ptpython,pgcli}/` | Herramientas de desarrollo (TUI/CLI) |
+| `.config/opencode/` | OpenCode AI: agentes SDD, MCP servers |
+| `.config/{wiremix,pavucontrol.ini}` | Audio (PipeWire/Pulse) |
+| `.config/flameshot/` | Captura de pantalla |
+| `.config/{calcurse,imv}/` | Utilidades (calendario, visor imágenes) |
+| `.config/composer/` | PHP Composer |
+| `.config/qt5ct/`, `qt6ct/` | Configuración de estilo Qt (Kvantum) |
 
 ---
 
 ## Bootstrap en una máquina nueva
 
 Este repo **no se instala** como un paquete: se asume que el repo vive en
-`\$HOME` (es un dotfiles-as-folder-repo). El flujo es:
+`$HOME` (es un dotfiles-as-folder-repo). El flujo es:
 
 ### 1. Instalar CachyOS
 
@@ -253,7 +360,7 @@ pkill waybar && waybar &
 - MCP servers: context7, engram, codegraph
 - Permisos granulares por herramienta y tipo de operación
 
-### Shells
+### Configuración de shells
 
 - **Fish**: config.fish modular, funciones helper (pj, nvm, tmux auto-attach)
 - **Zsh**: Powerlevel10k con segmentos custom (git, k8s, dotnet)
@@ -319,13 +426,17 @@ git diff --stat
 
 ## Créditos y referencias
 
-- [**Omarchy**](https://omarchy.org) — el sistema de DHH que sustenta el escritorio.
-- [**Hyprland**](https://hyprland.org) — compositor Wayland de referencia.
-- [**LazyVim**](https://lazyvim.org) — distribución Neovim base.
-- [**Starship**](https://starship.rs) — prompt.
-- [**OpenCode**](https://opencode.ai) — agente AI CLI.
-- [**Atuin**](https://atuin.sh) — historial de shell.
-- [**Carapace**](https://carapace.sh) — completion engine.
+- [**Omarchy**](https://omarchy.org "Omarchy — sistema operativo de DHH (37signals). Distribución opinionated sobre Arch Linux con Hyprland, configs prearmadas y temas sincronizados. https://omarchy.org") — el sistema de DHH que sustenta el escritorio.
+- [**Hyprland**](https://hyprland.org "Hyprland — compositor Wayland dinámico para Linux con animaciones, bordes redondeados, gestos y Tiling. Escrito en C++/wlroots. https://hyprland.org") — compositor Wayland de referencia.
+- [**LazyVim**](https://lazyvim.org "LazyVim — distribución Neovim basada en lazy.nvim. Incluye LSP, Treesitter, autopairs, formatting, completion. Configurable via lua/ y plugins lazy extras. https://lazyvim.org") — distribución Neovim base.
+- [**Starship**](https://starship.rs "Starship — prompt de shell cross-platform escrito en Rust. Configurable via starship.toml con segmentos para git, kubernetes, node, python, docker. https://starship.rs") — prompt.
+- [**OpenCode**](https://opencode.ai "OpenCode — agente AI CLI open source con soporte para múltiples providers (Anthropic, OpenAI, Google, Bedrock). Workflow SDD nativo con agentes sdd-*. https://opencode.ai") — agente AI CLI.
+- [**Atuin**](https://atuin.sh "Atuin — reemplazo del historial de shell con búsqueda full-text, sincronización opcional cifrada end-to-end y TUI. Soporta fish, zsh, bash, nushell. https://atuin.sh") — historial de shell.
+- [**Carapace**](https://carapace.sh "Carapace — completion engine multi-shell (Bash, Fish, Zsh, Nushell, Oil, elvish, powershell) escrito en Go. Genera completions consistentes desde spec files declarativos. https://carapace.sh") — completion engine.
+- [**Neovim**](https://neovim.io "Neovim — fork hiperextensible de Vim. LSP nativo, Treesitter, Lua como lenguaje de configuración first-class. https://neovim.io") — editor.
+- [**Ghostty**](https://ghostty.org "Ghostty — emulador de terminal con aceleración GPU escrito por Mitchell Hashimoto (HashiCorp). Multiplataforma, rápido, y respeta los estándares. https://ghostty.org") — terminal default Omarchy.
+- [**Btop**](https://github.com/aristocratos/btop "Btop — monitor de recursos TUI estilo bashtop. CPU, memoria, red, discos y procesos en una interfaz colorida y configurable. https://github.com/aristocratos/btop") — monitor del sistema.
+- [**CachyOS**](https://cachyos.org "CachyOS — distribución Arch Linux optimizada con kernel BBR, BORE scheduler, perfiles CPU optimizados por arquitectura. Default para este setup. https://cachyos.org") — distribución base.
 
 Inspirado por los dotfiles de la comunidad Arch/CachyOS y por las prácticas
 de configuración declarativa del ecosistema NixOS/Homemanager.
