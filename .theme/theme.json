@@ -1,0 +1,10 @@
+{
+  "qtile": {
+    "wm": "dark-grey",
+    "alacritty": "onedark"
+  },
+  "spectrwm": {
+    "alacritty": "onedark"
+  }
+}
+
