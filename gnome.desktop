@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=GNOME
+Comment=GNOME on Xorg
+Exec=gnome-session --session=gnome
+TryExec=gnome-session
+Type=Application
+DesktopNames=GNOME
+X-GDM-SessionRegisters=true
